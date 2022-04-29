@@ -70,7 +70,8 @@ public class LV1_두개뽑아서더하기 {
 		Arrays.sort(answer);
 
 		return answer;
-	}
+		
+	} // end solution()
 
 	/* ### 다른 사람 풀이 중 가장 깔끔했던 풀이 ###
 	 * 
@@ -97,6 +98,6 @@ public class LV1_두개뽑아서더하기 {
 		int[] result = lv1_두개뽑아서더하기.solution(numbers);
 		System.out.println(Arrays.toString(result));
 
-	}
+	} // end main()
 
-}
+} // end class LV1_두개뽑아서더하기

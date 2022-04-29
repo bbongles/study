@@ -91,7 +91,7 @@ public class LV1_최소직사각형 {
         
         return answer;
         
-    }
+    } // end solution()
 	
 	/* ### 다른 사람 풀이 중 가장 깔끔했던 풀이 ###
 	 * 
@@ -122,6 +122,6 @@ public class LV1_최소직사각형 {
 		
 		System.out.println(result);
 
-	}
+	} // end main()
 
-}
+} // end class LV1_최소직사각형
