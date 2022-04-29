@@ -59,12 +59,12 @@ public class LV1_부족한금액계산하기 {
 	 *    등차수열을 잘 활용하였고 Math.max 함수를 활용하여
 	 *    코드가 간결
 	 * 
-	 */
     public long solution(long price, long money, long count) {
         
     	return Math.max(price * (count * (count + 1) / 2) - money, 0);
         
     }
+    */
 	
 	public static void main(String[] args) {
 		
