@@ -1,0 +1,58 @@
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+
+<!-- 사용자 입력 핸들링 -->
+<body>
+	<!-- 
+	- v-on 디렉티브는 사용자가 앱과 상호작용할 수 있게 하기 위함
+	- v-on을 사용하여 Vue 인스턴스에서 메소드를 호출하는 이벤트 리스너 추가 가능
+	-->
+	<div id="event-handling">
+		<!--
+		- 직접적으로 DOM을 건드리지 않고 앱의 상태만을 업데이트
+		- 모든 DOM은 Vue에 의해 처리되며 작성한 코드는 기본 로직에만 초점을 맞춤
+		-->
+		<p>{{ message }}</p>
+		<button v-on:click="reverseMessage">Reverse Message</button>
+	</div>
+	
+	<!--
+	- v-model 디렉티브는 양식에 대한 입력과 앱 상태를 양방향 바인딩 함
+	-->
+	<div id="two-way-binding">
+		<p>{{ message }}</p>
+		<input v-model="message" />
+	</div>
+	
+</body>
+
+<script src="https://unpkg.com/vue@next"></script>
+<script type="text/javascript">
+	const EventHandling = {
+		data() {
+			return {
+				message: 'Hello Vue.js!'
+			}
+		}, 
+		methods: {
+			reverseMessage() {
+				this.message = this.message.split('').reverse().join('')
+			}
+		}
+	}
+	
+	const TwoWayBinding = {
+		data() {
+			return {
+				message: 'Hello Vue!'
+			}
+		}
+	}
+	
+	Vue.createApp(EventHandling).mount('#event-handling')
+	Vue.createApp(TwoWayBinding).mount('#two-way-binding')
+</script>
+
+</html>

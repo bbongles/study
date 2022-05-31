@@ -1,0 +1,57 @@
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+
+<!-- 선언적 렌더링(Declarative Rendering) -->
+<body>
+	<!-- 
+	- Vue.js에서는 간단한 템플릿 구문을 사용하여 DOM에서 데이터를 선언적으로 렌더링 할 수 있음.
+	- 데이터와 DOM이 연결되어 반응형(Reactive)을 이룸.
+	- 아래 코드는 매초마다 counter 속성이 증가하는 예
+	-->
+	<div id="counter">
+		Counter: {{ counter }}
+	</div>
+	
+	<div id="bind-attribute">
+		<!--
+		- v-bind 속성은 디렉티브
+		- 디렉티브 : Vue에서 제공하는 특수 속성, v- 접두어로 시작, DOM에 특수한 반응형 동작을 제공
+		- 여기서는 기본적으로 "이 요소의 title 속성을 Vue 인스턴스의 message 프로퍼티로 최신 상태를 유지."
+		-->
+		<span v-bind:title="message">
+			여기에 마우스를 올려두고 잠시 기다리면 제목이 동적으로 바뀝니다.
+		</span>
+	</div>
+	
+</body>
+
+<script src="https://unpkg.com/vue@next"></script>
+<script type="text/javascript">
+	const Counter = {
+		data() {
+			return {
+				counter : 0
+			}
+		},
+		mounted() {
+			setInterval(() => {
+				this.counter++
+			}, 1000)
+		}
+	}
+	
+	const AttributeBinding = {
+		data() {
+			return {
+				message : '이 페이지를 다음 시간에 열었습니다. ' + new Date().toLocaleString()
+			}
+		}
+	}
+	
+	Vue.createApp(Counter).mount('#counter')
+	Vue.createApp(AttributeBinding).mount('#bind-attribute')
+</script>
+
+</html>

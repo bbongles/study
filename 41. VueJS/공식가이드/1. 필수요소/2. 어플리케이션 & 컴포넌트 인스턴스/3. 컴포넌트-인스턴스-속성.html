@@ -1,0 +1,32 @@
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+
+<!-- 컴포넌트 인스턴스 속성들 -->
+<body>
+	<div id="app"></div>
+</body>
+
+<script src="https://unpkg.com/vue@next"></script>
+<script type="text/javascript">
+	// data에 정의된 속성은 컴포넌트 인스턴스를 통해 노출
+	const app = Vue.createApp({
+		data() {
+			return {
+				count: 4
+			}
+		}
+	})
+	
+	const vm = app.mount('#app')
+	
+	console.log(vm.count) // => 4
+	
+	// methods, props, computed, inject, setup과 같이 인스턴스에 추가하는 다양한 컴포넌트 옵션 존재
+	// 컴포넌트 인스턴스의 모든 속성은 정의된 방법에 관계없이 컴포넌트의 템플릿에서 접근할 수 있음.
+	// 또한, Vue는 컴포넌트 인스턴스를 통해 $attr, $emit과 같은 몇몇 빌트인(bulit-in) 속성이 존재.
+	// 이러한 속성은 사용자 정의 속성과 충돌을 피하기 위해 $ 접두사(prefix)를 가지고 있음.
+</script>
+
+</html>
